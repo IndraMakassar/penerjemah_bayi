@@ -194,7 +194,7 @@ class ArticleCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 14.0), // Jarak antara gambar dan judul
+                SizedBox(height: 14.0),
                 ListTile(
                   title: Text(
                     article.title,
@@ -211,32 +211,29 @@ class ArticleCard extends StatelessWidget {
                         fontSize: 12.0,
                         color: Colors.black.withOpacity(0.5),
                       ),
-                      maxLines:
-                          2, // Sesuaikan dengan jumlah baris yang diinginkan
+                      maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ),
-                SizedBox(
-                    height: 8.0), // Jarak antara description dan bagian bawah
+                SizedBox(height: 8.0),
               ],
             ),
             Positioned(
               top: 100.0,
-              left: 20, // Sesuaikan tinggi dari atas
+              left: 20,
               child: Container(
                 width: 50.0,
                 height: 50.0,
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white, // Warna lingkaran pertama (putih)
+                  color: Colors.white,
                 ),
                 child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color.fromARGB(
-                        255, 90, 181, 255), // Warna lingkaran kedua (biru)
+                    color: Color.fromARGB(255, 90, 181, 255),
                   ),
                   child: Icon(
                     getIconByType(article.type),

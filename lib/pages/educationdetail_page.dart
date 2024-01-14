@@ -19,7 +19,6 @@ class ArticleDetailPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        // Tambahkan SingleChildScrollView di sini
         child: Container(
           margin: EdgeInsets.only(top: 16.0),
           child: Column(
@@ -55,7 +54,6 @@ class ArticleDetailPage extends StatelessWidget {
                       fontSize: 16.0, color: Colors.black.withOpacity(0.6)),
                 ),
               ),
-              // Tambahkan widget lainnya sesuai kebutuhan
             ],
           ),
         ),
