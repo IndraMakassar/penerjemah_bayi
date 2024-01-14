@@ -53,6 +53,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - lib/assets/images/gambar_baby1.jpg
+    - lib/assets/images/babymom.webp
+    - lib/assets/images/gambar_baby2.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
