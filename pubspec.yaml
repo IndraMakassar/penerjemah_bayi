@@ -57,6 +57,9 @@ flutter:
     - lib/assets/images/gambar_baby1.jpg
     - lib/assets/images/babymom.webp
     - lib/assets/images/gambar_baby2.png
+    - lib/assets/images/gambar_baby3.jpg
+    - lib/assets/images/gambar_baby4.jpg
+    - lib/assets/images/gambar_keluarga1.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
