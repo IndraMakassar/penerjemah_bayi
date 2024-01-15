@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:penerjemah_bayi/components/history.dart';
 import 'package:penerjemah_bayi/components/record_button.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,13 +43,15 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          const SizedBox(height: 64),
+          const SizedBox(height: 32),
           const Text(
             "Tap To Record",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 64),
+          const SizedBox(height: 24),
           const RecordButton(),
+          const SizedBox(height: 48),
+          const History(),
         ],
       ),
     );
