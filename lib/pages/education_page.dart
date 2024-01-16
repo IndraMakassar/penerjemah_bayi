@@ -171,10 +171,12 @@ class ArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () => _navigateToDetailPage(context),
       child: Card(
-        margin: const EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
+        margin: EdgeInsets.fromLTRB(
+            screenWidth * 0.1, 10.0, screenWidth * 0.1, 10.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -194,7 +196,7 @@ class ArticleCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 14.0),
+                SizedBox(height: 5.0),
                 ListTile(
                   title: Text(
                     article.title,
@@ -203,17 +205,14 @@ class ArticleCard extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: Text(
-                      article.description,
-                      style: TextStyle(
-                        fontSize: 12.0,
-                        color: Colors.black.withOpacity(0.5),
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                  subtitle: Text(
+                    article.description,
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black.withOpacity(0.5),
                     ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 SizedBox(height: 8.0),
