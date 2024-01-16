@@ -21,16 +21,19 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("rebuild");
-
     List<BottomNavigationBarItem> bottomNavItems = [
       BottomNavigationBarItem(
-          icon: (currentIndex == 0) ? const Icon(Icons.home) : const Icon(Icons.home_outlined), label: 'Home'),
+        icon: (currentIndex == 0) ? const Icon(Icons.home) : const Icon(Icons.home_outlined),
+        label: 'Home',
+      ),
       BottomNavigationBarItem(
-          icon: (currentIndex == 1) ? const Icon(Icons.article) : const Icon(Icons.article_outlined), label: 'Education'),
+        icon: (currentIndex == 1) ? const Icon(Icons.article) : const Icon(Icons.article_outlined),
+        label: 'Education',
+      ),
       BottomNavigationBarItem(
-          icon: (currentIndex == 2) ? const Icon(Icons.child_friendly) : const Icon(Icons.child_friendly_outlined),
-          label: 'My Baby')
+        icon: (currentIndex == 2) ? const Icon(Icons.child_friendly) : const Icon(Icons.child_friendly_outlined),
+        label: 'My Baby',
+      )
     ];
 
     return Scaffold(
@@ -41,7 +44,6 @@ class _MainPageState extends State<MainPage> {
         onTap: (index) {
           setState(() {
             currentIndex = index;
-            print(index);
           });
         },
       ),
