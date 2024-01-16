@@ -58,6 +58,12 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - lib/assets/images/gambar_baby1.jpg
+    - lib/assets/images/babymom.webp
+    - lib/assets/images/gambar_baby2.png
+    - lib/assets/images/gambar_baby3.jpg
+    - lib/assets/images/gambar_baby4.jpg
+    - lib/assets/images/gambar_keluarga1.jpg
     - assets/icons/hungry.svg
 
   # The following line ensures that the Material Icons font is
