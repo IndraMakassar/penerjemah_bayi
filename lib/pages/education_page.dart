@@ -109,23 +109,22 @@ class _EducationPageState extends State<EducationPage> {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Article'),
-          backgroundColor: Color.fromARGB(255, 255, 109, 158),
-          actions: [
-            IconButton(
-              onPressed: () => _showFilterModal(context),
-              icon: Icon(Icons.filter_list),
-            ),
-          ],
-        ),
-        body: ListView.builder(
-          itemCount: filteredArticles.length,
-          itemBuilder: (context, index) {
-            return ArticleCard(article: filteredArticles[index]);
-          },
-        ),
-      ),
+          appBar: AppBar(
+            title: const Text('Article'),
+            backgroundColor: Color.fromARGB(255, 255, 109, 158),
+            actions: [
+              IconButton(
+                onPressed: () => _showFilterModal(context),
+                icon: Icon(Icons.filter_list),
+              ),
+            ],
+          ),
+          body: ListView.builder(
+            itemCount: filteredArticles.length,
+            itemBuilder: (context, index) {
+              return ArticleCard(article: filteredArticles[index]);
+            },
+          )),
     );
   }
 }
@@ -171,78 +170,80 @@ class ArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () => _navigateToDetailPage(context),
-      child: Card(
-        margin: EdgeInsets.fromLTRB(
-            screenWidth * 0.1, 10.0, screenWidth * 0.1, 10.0),
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: Image.asset(
-                    'lib/assets/images/${article.image}',
-                    width: double.infinity,
-                    height: 130.0,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                SizedBox(height: 5.0),
-                ListTile(
-                  title: Text(
-                    article.title,
-                    style:
-                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  subtitle: Text(
-                    article.description,
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.black.withOpacity(0.5),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: Image.asset(
+                      'lib/assets/images/${article.image}',
+                      width: double.infinity,
+                      height: 130.0,
+                      fit: BoxFit.cover,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                SizedBox(height: 8.0),
-              ],
-            ),
-            Positioned(
-              top: 100.0,
-              left: 20,
-              child: Container(
-                width: 50.0,
-                height: 50.0,
-                padding: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                ),
+                  SizedBox(height: 14.0),
+                  ListTile(
+                    title: Text(
+                      article.title,
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        article.description,
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black.withOpacity(0.5),
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                ],
+              ),
+              Positioned(
+                top: 100.0,
+                left: 20,
                 child: Container(
+                  width: 50.0,
+                  height: 50.0,
+                  padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color.fromARGB(255, 90, 181, 255),
-                  ),
-                  child: Icon(
-                    getIconByType(article.type),
                     color: Colors.white,
-                    size: 16.0,
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 90, 181, 255),
+                    ),
+                    child: Icon(
+                      getIconByType(article.type),
+                      color: Colors.white,
+                      size: 16.0,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
