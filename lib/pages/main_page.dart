@@ -24,19 +24,22 @@ class _MainPageState extends State<MainPage> {
     List<BottomNavigationBarItem> bottomNavItems = [
       BottomNavigationBarItem(
         icon: (currentIndex == 0)
-            ? const Icon(Icons.home)
+            ? const Icon(
+                Icons.home,
+                color: Color.fromARGB(255, 237, 90, 178),
+              )
             : const Icon(Icons.home_outlined),
         label: 'Home',
       ),
       BottomNavigationBarItem(
         icon: (currentIndex == 1)
-            ? const Icon(Icons.article)
+            ? const Icon(Icons.article, color: Color.fromARGB(255, 237, 90, 178))
             : const Icon(Icons.article_outlined),
         label: 'Education',
       ),
       BottomNavigationBarItem(
         icon: (currentIndex == 2)
-            ? const Icon(Icons.child_friendly)
+            ? const Icon(Icons.child_friendly, color: Color.fromARGB(255, 237, 90, 178))
             : const Icon(Icons.child_friendly_outlined),
         label: 'My Baby',
       )

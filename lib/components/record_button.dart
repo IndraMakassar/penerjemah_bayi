@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RecordButton extends StatefulWidget {
-  const RecordButton({Key? key}) : super(key: key);
+  final VoidCallback? onPressed;
+
+  const RecordButton({Key? key, this.onPressed}) : super(key: key);
 
   @override
   _RecordButtonState createState() => _RecordButtonState();
@@ -11,7 +13,9 @@ class _RecordButtonState extends State<RecordButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        widget.onPressed?.call();
+      },
       style: const ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 255, 215, 239)),
         iconSize: MaterialStatePropertyAll(96),
