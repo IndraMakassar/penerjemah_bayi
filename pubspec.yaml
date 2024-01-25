@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  sliding_switch: '^1.0.0'
   flutter:
     sdk: flutter
 
@@ -64,6 +65,9 @@ flutter:
     - lib/assets/images/gambar_baby3.jpg
     - lib/assets/images/gambar_baby4.jpg
     - lib/assets/images/gambar_keluarga1.jpg
+    - lib/assets/images/profile_baby.png
+    - lib/assets/images/calendar.svg
+    - lib/assets/images/dropdown.svg
     - assets/icons/hungry.svg
 
   # The following line ensures that the Material Icons font is
