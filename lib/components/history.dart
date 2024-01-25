@@ -32,6 +32,7 @@ class _HistoryState extends State<History> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 4),
@@ -40,6 +41,10 @@ class _HistoryState extends State<History> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
+                Icon(
+                  Icons.keyboard_arrow_up,
+                  size: 32,
+                )
               ],
             ),
             const SizedBox(height: 4),
