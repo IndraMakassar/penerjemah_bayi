@@ -2,18 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:sliding_switch/sliding_switch.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MyBabyPage extends StatelessWidget {
+bool isBoy = false;
+
+class MyBabyPage extends StatefulWidget {
   static bool isGirlSelected = true;
 
   const MyBabyPage({Key? key}) : super(key: key);
 
   @override
+  State<MyBabyPage> createState() => _MyBabyPageState();
+}
+
+class _MyBabyPageState extends State<MyBabyPage> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: const Text('My Baby'),
-            backgroundColor: Color.fromARGB(255, 255, 109, 158),
+            backgroundColor: isBoy
+                ? Color.fromARGB(255, 90, 181, 255)
+                : Color.fromARGB(255, 255, 109, 158),
           ),
           body: SingleChildScrollView(
             child: Column(
@@ -78,7 +88,7 @@ class MyBabyForm extends StatefulWidget {
 
 class _MyBabyFormState extends State<MyBabyForm> {
   DateTime? _selectedDate;
-  bool isBoy = false;
+
   String dropdownvalue = 'Mother';
   String countryvalue = 'United States';
   var items = [
@@ -197,7 +207,12 @@ class _MyBabyFormState extends State<MyBabyForm> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SvgPicture.asset("lib/assets/images/calendar.svg"),
+                      SvgPicture.asset(
+                        "lib/assets/images/calendar.svg",
+                        color: isBoy
+                            ? Color.fromARGB(255, 90, 181, 255)
+                            : Color.fromARGB(255, 255, 109, 158),
+                      ),
                       Container(
                         height: 40,
                         child: Center(
@@ -355,7 +370,9 @@ class _MyBabyFormState extends State<MyBabyForm> {
           onPressed: () {},
           child: Text('Simpan'),
           style: ElevatedButton.styleFrom(
-              primary: Color.fromARGB(255, 255, 109, 158),
+              primary: isBoy
+                  ? Color.fromARGB(255, 90, 181, 255)
+                  : Color.fromARGB(255, 255, 109, 158),
               onPrimary: Colors.white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15))),
